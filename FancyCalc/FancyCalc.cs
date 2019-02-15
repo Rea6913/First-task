@@ -41,8 +41,14 @@ namespace FancyCalc
                 if (chisla.Contains(expression[i]) == true)
                     anton += expression[i];
                 else if (expression[i] == '+' || expression[i] == '-' || expression[i] == '*')
+                {
                     big_balls = expression[i];
-                else if (expression[i] == ' ' && anton !="")
+                    if (anton!="")
+                        a = Convert.ToInt32(anton);
+                    anton = "";
+                
+                }
+                else if (expression[i] == ' ' && anton != "")
                 {
                     if (a != -1)
                         b = Convert.ToInt32(anton);
@@ -51,6 +57,8 @@ namespace FancyCalc
                     anton = "";
                 }
             }
+            if (anton!="")
+                b = Convert.ToInt32(anton);
             switch (big_balls)
             {
                 case '+':
