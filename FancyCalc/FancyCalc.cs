@@ -67,7 +67,7 @@ namespace FancyCalc
                     {
                         return Multiply(a, b);
                         break;
-                    } 
+                    }
             }
             throw new NotImplementedException();
         }
